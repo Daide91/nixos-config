@@ -7,16 +7,12 @@
 
   # 直接将当前文件夹的配置文件，链接到 Home 目录下的指定位置
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
-  home.file.".ssh/id_rsa" = {
-    source = config.lib.file.mkOutOfStoreSymlink ./secrets/id_rsa;
-  };
+  home.file.".ssh/id_rsa".source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/secrets/id_rsa";
 
-  home.file.".ssh/id_rsa.pub" = {
-    source = config.lib.file.mkOutOfStoreSymlink ./secrets/id_rsa.pub;
-  };
+  home.file.".ssh/id_rsa.pub".source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/secrets/id_rsa.pub";
 
-  home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink ./configs/nvim;
-  home.file.".tmux.conf".source = config.lib.file.mkOutOfStoreSymlink ./configs/tmux.conf;
+  home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/configs/nvim";
+  home.file.".tmux.conf".source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/configs/tmux.conf";
 
   # 递归将某个文件夹中的文件，链接到 Home 目录下的指定位置
   # home.file.".config/i3/scripts" = {
