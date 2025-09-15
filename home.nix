@@ -8,14 +8,14 @@
   # 直接将当前文件夹的配置文件，链接到 Home 目录下的指定位置
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
   home.file.".ssh/id_rsa" = {
-    source = ./secrets/id_rsa;
+    source = config.lib.file.mkOutOfStoreSymlink ./secrets/id_rsa;
     onChange = ''
       chmod 600 ~/.ssh/id_rsa
     '';
   };
 
   home.file.".ssh/id_rsa.pub" = {
-    source = ./secrets/id_rsa.pub;
+    source = config.lib.file.mkOutOfStoreSymlink ./secrets/id_rsa.pub;
     onChange = ''
       chmod 600 ~/.ssh/id_rsa.pub
     '';
