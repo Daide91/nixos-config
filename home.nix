@@ -8,17 +8,21 @@
   # 直接将当前文件夹的配置文件，链接到 Home 目录下的指定位置
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
   home.file.".ssh/id_rsa" = {
-    source = /etc/nixos/secrets/id_rsa;
-    permissions = "0600";
-  }
+    source = ./secrets/id_rsa;
+    onChange = ''
+      chmod 600 ~/.ssh/id_rsa
+    '';
+  };
 
   home.file.".ssh/id_rsa.pub" = {
     source = ./secrets/id_rsa.pub;
-    permissions = "0600";
-  }
+    onChange = ''
+      chmod 600 ~/.ssh/id_rsa.pub
+    '';
+  };
 
-  home.file.".config/nvim".source = ./configs/nvim
-  home.file.".tmux.conf".source = ./configs/tmux.conf
+  home.file.".config/nvim".source = ./configs/nvim;
+  home.file.".tmux.conf".source = ./configs/tmux.conf;
 
   # 递归将某个文件夹中的文件，链接到 Home 目录下的指定位置
   # home.file.".config/i3/scripts" = {
