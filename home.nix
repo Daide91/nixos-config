@@ -21,8 +21,8 @@
     '';
   };
 
-  home.file.".config/nvim".source = ./configs/nvim;
-  home.file.".tmux.conf".source = ./configs/tmux.conf;
+  home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink ./configs/nvim;
+  home.file.".tmux.conf".source = config.lib.file.mkOutOfStoreSymlink ./configs/tmux.conf;
 
   # 递归将某个文件夹中的文件，链接到 Home 目录下的指定位置
   # home.file.".config/i3/scripts" = {
