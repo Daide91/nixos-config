@@ -9,16 +9,10 @@
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
   home.file.".ssh/id_rsa" = {
     source = config.lib.file.mkOutOfStoreSymlink ./secrets/id_rsa;
-    onChange = ''
-      chmod 600 ~/.ssh/id_rsa
-    '';
   };
 
   home.file.".ssh/id_rsa.pub" = {
     source = config.lib.file.mkOutOfStoreSymlink ./secrets/id_rsa.pub;
-    onChange = ''
-      chmod 600 ~/.ssh/id_rsa.pub
-    '';
   };
 
   home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink ./configs/nvim;
