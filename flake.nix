@@ -12,22 +12,22 @@
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-	specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs; };
         modules = [
           nixos-wsl.nixosModules.default
           {
             system.stateVersion = "25.05";
             wsl.enable = true;
-	    wsl.docker-desktop.enable = true;
+            wsl.docker-desktop.enable = true;
           }
-	  ./configuration.nix
-	  home-manager.nixosModules.home-manager
-	  {
-	    home-manager.useGlobalPkgs = true;
-	    home-manager.useUserPackages = true;
+          ./configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
 
-	    home-manager.users.nixos = import ./home.nix;
-	  }
+            home-manager.users.nixos = import ./home.nix;
+          }
         ];
       };
     };
