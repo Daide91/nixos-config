@@ -26,19 +26,12 @@
   #     xxx
   # '';
 
-  # 设置鼠标指针大小以及字体 DPI（适用于 4K 显示器）
-  xresources.properties = {
-    "Xcursor.size" = 16;
-    "Xft.dpi" = 172;
-  };
-
   # 通过 home.packages 安装一些常用的软件
   # 这些软件将仅在当前用户下可用，不会影响系统级别的配置
   # 建议将所有 GUI 软件，以及与 OS 关系不大的 CLI 软件，都通过 home.packages 安装
   home.packages = with pkgs;[
     # 如下是我常用的一些命令行工具，你可以根据自己的需要进行增删
     neofetch
-    nnn # terminal file manager
 
     # archives
     zip
