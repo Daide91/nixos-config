@@ -9,6 +9,11 @@
   };
 
   outputs = inputs@{ self, nixpkgs, nixos-wsl, home-manager,... }: {
+    nix.gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 1w";
+    };
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
