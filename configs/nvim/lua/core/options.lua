@@ -17,5 +17,5 @@ vim.opt.smartcase = true
 vim.opt.ignorecase = true
 
 -- fold relate
-vim.opt.foldmethod="indent"
+-- vim.opt.foldmethod="indent"
 

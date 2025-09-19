@@ -13,8 +13,9 @@ return {
         "neovim/nvim-lspconfig",
     },
     keys = {
-      {"<leader>gd", "<cmd>lua vim.lsp.buf.definition()<cr>", desc = "Lsp goto definition"},
-      {"<leader>gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", desc = "Lsp goto implementation"},
-      {"<leader>gr", "<cmd>lua vim.lsp.buf.refenerces()<cr>", desc = "Lsp goto references"},
+      {"<leader>gd", "<cmd>lua vim.lsp.buf.definition()<cr>", desc = "Lsp Goto Definition"},
+      {"<leader>gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", desc = "Lsp Goto Implementation"},
+      {"<leader>gr", "<cmd>lua vim.lsp.buf.refenerces()<cr>", desc = "Lsp Goto References"},
+      {"<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Show Can Use Code Action"},
     }
 }
