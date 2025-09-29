@@ -18,5 +18,7 @@
     neovim
     lua
     luajitPackages.luarocks
+    proxychains
+    inetutils
   ];
 }
