@@ -93,6 +93,9 @@
     ethtool
     pciutils # lspci
     usbutils # lsusb
+
+    nodejs_24
+
   ];
 
   # git 相关配置
