@@ -19,3 +19,4 @@ vim.opt.ignorecase = true
 -- fold relate
 -- vim.opt.foldmethod="indent"
 
+vim.opt.colorcolumn = "120"
